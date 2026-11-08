@@ -11,6 +11,7 @@ using osu.Framework.Input.Handlers.Mouse;
 using osu.Framework.Input.Handlers.Pen;
 using osu.Framework.Input.Handlers.Tablet;
 using osu.Framework.Input.Handlers.Touch;
+using osu.Framework.Input.Handlers.YandexStation;
 using osu.Framework.Platform.SDL2;
 using osu.Framework.Platform.SDL3;
 using SixLabors.ImageSharp.Formats.Png;
@@ -54,6 +55,7 @@ namespace osu.Framework.Platform
             yield return new TouchHandler();
             yield return new JoystickHandler();
             yield return new MidiHandler();
+            yield return new YandexStationHandler();
         }
     }
 }
