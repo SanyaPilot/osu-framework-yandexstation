@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using osu.Framework.Bindables;
 using osu.Framework.Input.StateChanges;
 using osu.Framework.IO.Network;
+using osu.Framework.Logging;
 using osu.Framework.Platform;
 using osu.Framework.Statistics;
 
@@ -69,12 +70,17 @@ namespace osu.Framework.Input.Handlers.YandexStation
                     enqueueJoystickButtonUp(JoystickButton.Axis64Negative);
                     break;
 
-                case "btn:dn":
-                    enqueueJoystickButtonDown(JoystickButton.Button128);
+                case "btn1:dn":
+                    enqueueJoystickButtonDown(JoystickButton.Button64);
                     break;
 
-                case "btn:up":
-                    enqueueJoystickButtonUp(JoystickButton.Button128);
+                case "btn1:up":
+                    enqueueJoystickButtonUp(JoystickButton.Button64);
+                    break;
+
+                case "btn2":  // Mic button saves it's state in hardware, so treat every event as a click
+                    enqueueJoystickButtonDown(JoystickButton.Button63);
+                    enqueueJoystickButtonUp(JoystickButton.Button63);
                     break;
             }
         }
