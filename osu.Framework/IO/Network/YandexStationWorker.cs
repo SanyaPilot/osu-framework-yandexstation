@@ -139,9 +139,9 @@ namespace osu.Framework.IO.Network
             send("action:resume");
         }
 
-        public void DisplaySPM()
+        public void DisplaySPM(int targetSpins)
         {
-            send("display:spm");
+            send("display:spm:" + targetSpins);
         }
 
         public void DisplayTime()
