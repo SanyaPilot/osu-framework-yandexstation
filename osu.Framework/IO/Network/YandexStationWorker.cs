@@ -1,6 +1,7 @@
 // Copyright (c) SanyaPilot 2026
 
 using System;
+using System.Globalization;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -121,7 +122,7 @@ namespace osu.Framework.IO.Network
 
         public void NotifyGameplayStarted(double timerOffset)
         {
-            send("action:start:" + Math.Round(timerOffset, 2));
+            send("action:start:" + Math.Round(timerOffset, 2).ToString(CultureInfo.InvariantCulture));
         }
 
         public void NotifyGameplayEnded()
